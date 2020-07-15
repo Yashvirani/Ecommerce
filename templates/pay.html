@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 style="text-align:center;font-family: 'Anton', sans-serif;margin-top:40px;"><strong>Payment Gateway</strong></h2>
+{% if error %}
+<h3>{{ error }}</h3>
+{% endif %}
+<form method="post" class="" >
+    {% csrf_token %}
+    <label for="username" style="margin-left:40px;"><strong>Username:</strong> </label> <br>
+    <input id="username" type="text" name="username" style="width:100%;margin-left:40px;margin-right:400px;position:absolute;border-radius:25px;border-color:#3333ff;"  required><br>
+    <label id="password" for="password" style="margin-left:40px;margin-top:15px;"><strong>Password:</strong> </label><br>
+    <input type="password" name="password" style="margin-left:40px;width:100%;border-radius:25px;border-color:#3333ff;" required><br>
+    <label id="amount" for="amount" style="margin-left:40px;margin-top:10px;"><strong>Amount:</strong> </label><br>
+    <input type="number" name="amount" value="" style="margin-left:40px;width:100%;border-radius:25px;border-color:#3333ff;"><br>
+    <input type="checkbox" name="" value="" style="margin-left:40px;margin-right:5px;border-radius:100px;"><small>You agree to our terms and conditions.</small><br>
+    <input type="submit" name="submit" value="Submit" style="margin-left:600px;margin-top:12px;border-radius:25px;border-color:black;background-color:black;color:white;" required><br>
+
+</form>
+
+{% endblock content %}

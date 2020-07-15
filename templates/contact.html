@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="back">
+  <strong style="text-size:450px;text-align:center;"><h6>Contact Us</h6></strong>
+  <form  action="{% url 'app:contact' %}" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <label for="email" style="margin-left:40px;">Your Email Address:</label><br>
+    <input type="email" name="email" style="margin-left:40px;margin-right:1800px;width:100%;margin-bottom:10px;"placeholder="email"> <br>
+    <label for="message" style="margin-left:40px;">Your message:</label><br>
+    <textarea name="message" rows="8" cols="80" type="message" placeholder="Your message here!" style="margin-left:40px;margin-right:1800px;width:100%;"></textarea><br>
+    <button type="submit" class="btn btn-success btn-md" name="button" style="margin-top:10px;margin-left:40px;">SEND MAIL</button>
+
+
+  </form>
+
+
+</div>
+{% endblock content %}
